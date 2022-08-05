@@ -31,7 +31,7 @@
         </div>
     </section>
     <section id="calendar" class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <h2 class="text-center text-5xl text-darkGold">Calendar</h2>
+        <h2 class="text-center text-5xl text-darkGold">Calendar view</h2>
         @php
             $months = [
                 ['month' => 'HAMMER', 'moniker' => 'Deepwinter'],
