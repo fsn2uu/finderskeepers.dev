@@ -16,6 +16,7 @@
         </div>
         <div class="hidden md:flex space-x-6 items-baseline">
             <a href="{{ route('contracts.index') }}" class="nav">Contracts</a>
+            <a href="{{ route('events.index') }}" class="nav">Events</a>
             
         </div>
         <button id="menu-btn" class="block z-50 hamburger md:hidden focus:outline-none">
@@ -29,6 +30,7 @@
     <div class="md:hidden">
         <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
             <a href="{{ route('contracts.index') }}" class="nav">Contracts</a>
+            <a href="{{ route('events.index') }}" class="nav">Events</a>
         </div>
     </div>
 </nav>
