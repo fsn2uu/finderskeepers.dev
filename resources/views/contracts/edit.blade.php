@@ -3,7 +3,7 @@
 @section('content')
 
     <section id="form" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 w-[65%] mx-auto">
-        <h2 class="text-3xl mb-6">Edit a Contract</h2>
+        <h2 class="text-3xl mb-6 font-vecna">Edit a Contract</h2>
         <form action="{{ route('contracts.update', $contract) }}" method="POST">
             @csrf
             @method('PATCH')

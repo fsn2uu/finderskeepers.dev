@@ -4,14 +4,14 @@
 
     <section id="form" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 w-[65%] mx-auto">
         <h2 class="text-3xl mb-6">
-            Contracts
+            <span class="font-vecna">Contracts</span>
             <a href="{{ route('contracts.create') }}" class="float-right text-lg py-2 px-4 bg-gold hover:bg-darkGold text-white">Create</a>
         </h2>
         @if ($contracts->count() > 0)
             <div class="grid grid-cols-9 gap-1">
                 @foreach ($contracts as $contract)
                     <div class="col-span-9 md:col-span-3">
-                        <a href="{{ route('contracts.show', $contract) }}" class="text-darkGold">
+                        <a href="{{ route('contracts.show', $contract) }}" class="text-link underline">
                             {{ $contract->contractor }} ({{ $contract->status }})
                         </a>
                     </div>

@@ -3,7 +3,7 @@
 @section('content')
 
     <section id="form" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 w-[65%] mx-auto">
-        <h2 class="text-3xl mb-6">Create an Event</h2>
+        <h2 class="text-3xl mb-6 font-vecna">Create an Event</h2>
         <form action="{{ route('events.store') }}" method="POST">
             @csrf
             <label for="title" class="mb-4">

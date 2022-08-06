@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Vecna";
+  src: url("../../public/fonts/vecna-font/Vecna-oppx.ttf");
+}
+
 @import '~@fortawesome/fontawesome-free/css/fontawesome';
 @import '~@fortawesome/fontawesome-free/css/regular';
 @import '~@fortawesome/fontawesome-free/css/solid';

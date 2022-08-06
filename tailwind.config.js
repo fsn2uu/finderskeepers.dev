@@ -15,7 +15,11 @@ module.exports = {
     extend: {
       colors: {
         gold: '#FCC200',
-        darkGold: '#B38900'
+        darkGold: '#B38900',
+        link: '#0022FC'
+      },
+      fontFamily: {
+        vecna: ['Vecna', 'cursive']
       }
     },
   },

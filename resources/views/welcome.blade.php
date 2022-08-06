@@ -4,14 +4,14 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 w-[65%] mx-auto gap-6">
     <section id="contracts" class="rounded-xl bg-white bg-opacity-70 px-6 py-7">
-        <h2 class="text-3xl mb-6">Contracts</h2>
+        <h2 class="text-3xl mb-6 text-darkGold font-vecna">Contracts</h2>
         @foreach (App\Models\Contract::limit(5)->get() as $contract)
-            <a href="{{ route('contracts.show', $contract) }}" class="block text-darkGold">{{ $contract->contractor }} ({{$contract->status}}) - {{$contract->platinum}}pp | {{$contract->electrum}}ep | {{$contract->gold}}gp | {{$contract->silver}}sp | {{$contract->copper}}cp</a>
+            <a href="{{ route('contracts.show', $contract) }}" class="block text-link underline">{{ $contract->contractor }} ({{$contract->status}}) - {{$contract->platinum}}pp | {{$contract->electrum}}ep | {{$contract->gold}}gp | {{$contract->silver}}sp | {{$contract->copper}}cp</a>
         @endforeach
         <div class="my-4 w-[85%] mx-auto">
             <hr>
         </div>
-        <p class="text-lg">Receivables in Active Contracts</p>
+        <p class="text-lg text-darkGold">Receivables in Active Contracts</p>
         <div class="grid grid-cols-5">
             <div>
                 {{ App\Models\Contract::where('status', 'Active')->sum('platinum') }}pp
@@ -50,9 +50,9 @@
         @for ($i = 1; $i <= 12; $i++)
             <div class="rounded-xl bg-white bg-opacity-70 px-6 py-7">
                 <h3 class="w-full block mb-16 text-darkGold">
-                    <span class="float-left text-5xl">{{ $i }}</span>
+                    <span class="float-left text-5xl font-vecna">{{ $i }}</span>
                     <span class="float-right text-right">
-                        <span class="text-2xl block text-right">{{ $months[$i-1]['month'] }}</span>
+                        <span class="text-2xl block text-right font-vecna">{{ $months[$i-1]['month'] }}</span>
                         <span class="text-sm text-right"><em>{{ $months[$i-1]['moniker'] }}</em></span>
                     </span>
                 </h3>
