@@ -4,7 +4,7 @@
 
     <section id="form" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 w-[65%] mx-auto">
         <h2 class="text-3xl mb-6">
-            <span class="font-vecna">Events</span>
+            <span class="font-vecna text-darkGold">Events</span>
             <a href="{{ route('events.create') }}" class="float-right text-lg py-2 px-4 bg-gold hover:bg-darkGold text-white">Create</a>
         </h2>
         @if ($events->count() > 0)
