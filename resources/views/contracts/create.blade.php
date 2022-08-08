@@ -14,7 +14,7 @@
                 Description
                 <textarea name="description" id="description" class="shadow appearance-none border border-[#ccc] mb-2 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </label>
-            <div class="grid grid-cols-5 gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
                 <label for="platinum" class="mb-4">
                     Proposed Platinum
                     <input type="text" name="platinum" id="platinum" class="shadow appearance-none border border-[#ccc] mb-2 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">

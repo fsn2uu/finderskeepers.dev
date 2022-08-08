@@ -8,9 +8,9 @@
             <a href="{{ route('hirlings.create') }}" class="float-right text-lg py-2 px-4 bg-gold hover:bg-darkGold text-white">Create</a>
         </h2>
         @if ($hirlings->count() > 0)
-            <div class="grid md:grid-cols-9 gap-1">
+            <div class="grid grid-cols-2 md:grid-cols-9 gap-1">
                 @foreach ($hirlings as $hirling)
-                    <div class="col-span-9 md:col-span-3">
+                    <div class="sm:col-span-2 col-span-9 md:col-span-3">
                         <a href="{{ route('hirlings.show', $hirling) }}" class="text-link underline">{{$hirling->name}}</a>
                     </div>
                     <div>{{ $hirling->job }}</div>
