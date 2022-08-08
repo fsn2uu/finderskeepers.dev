@@ -8387,6 +8387,9 @@ video {
 .col-span-9 {
   grid-column: span 9 / span 9;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .float-right {
   float: right;
 }

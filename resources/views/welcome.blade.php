@@ -30,39 +30,48 @@
             </div>
         </div>
     </section>
-    <section id="calendar" class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        @php
-            $months = [
-                ['month' => 'HAMMER', 'moniker' => 'Deepwinter'],
-                ['month' => 'ALTURIAK', 'moniker' => 'The Claw of Winter'],
-                ['month' => 'CHES', 'moniker' => 'The Claw of Sunsets'],
-                ['month' => 'TARSAKH', 'moniker' => 'The Claw of Storms'],
-                ['month' => 'MIRTUL', 'moniker' => 'The Melting'],
-                ['month' => 'KYTHORN', 'moniker' => 'The Time of Flowers'],
-                ['month' => 'FLAMERULE', 'moniker' => 'Summertide'],
-                ['month' => 'ELEASIAS', 'moniker' => 'Highsun'],
-                ['month' => 'ELEINT', 'moniker' => 'The Fading'],
-                ['month' => 'MARPENOTH', 'moniker' => 'Leaffall'],
-                ['month' => 'UKTAR', 'moniker' => 'The rotting'],
-                ['month' => 'NIGHTAL', 'moniker' => 'The Drawing Down'],
-            ];
-        @endphp
-        @for ($i = 1; $i <= 12; $i++)
-            <div class="rounded-xl bg-white bg-opacity-70 px-6 py-7">
-                <h3 class="w-full block mb-16 text-darkGold">
-                    <span class="float-left text-5xl font-vecna">{{ $i }}</span>
-                    <span class="float-right text-right">
-                        <span class="text-2xl block text-right font-vecna">{{ $months[$i-1]['month'] }}</span>
-                        <span class="text-sm text-right"><em>{{ $months[$i-1]['moniker'] }}</em></span>
-                    </span>
-                </h3>
-                <div class="grid grid-cols-10">
-                    @for ($ii = 1; $ii <= 30; $ii++)
-                        <div>{{ $ii }}</div>
-                    @endfor
+    <section id="hirlings" class="rounded-xl bg-white bg-opacity-70 px-6 py-7">
+        <h2 class="text-3xl mb-6 text-darkGold font-vecna">Hirlings</h2>
+        @foreach (App\Models\Hirling::limit(5)->get() as $hirling)
+            <a href="{{ route('hirlings.show', $hirling) }}" class="block text-link underline">{{ $hirling->name }} - {{ $hirling->job }}</a>
+        @endforeach
+    </section>
+    <section id="calendar" class="col-span-2 mb-16 rounded-xl bg-white bg-opacity-70">
+        <h2 class="text-3xl text-darkGold font-vecna mb-4 text-center mt-4">Calendar of Harptos</h2>
+        <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8">
+            @php
+                $months = [
+                    ['month' => 'HAMMER', 'moniker' => 'Deepwinter'],
+                    ['month' => 'ALTURIAK', 'moniker' => 'The Claw of Winter'],
+                    ['month' => 'CHES', 'moniker' => 'The Claw of Sunsets'],
+                    ['month' => 'TARSAKH', 'moniker' => 'The Claw of Storms'],
+                    ['month' => 'MIRTUL', 'moniker' => 'The Melting'],
+                    ['month' => 'KYTHORN', 'moniker' => 'The Time of Flowers'],
+                    ['month' => 'FLAMERULE', 'moniker' => 'Summertide'],
+                    ['month' => 'ELEASIAS', 'moniker' => 'Highsun'],
+                    ['month' => 'ELEINT', 'moniker' => 'The Fading'],
+                    ['month' => 'MARPENOTH', 'moniker' => 'Leaffall'],
+                    ['month' => 'UKTAR', 'moniker' => 'The rotting'],
+                    ['month' => 'NIGHTAL', 'moniker' => 'The Drawing Down'],
+                ];
+            @endphp
+            @for ($i = 1; $i <= 12; $i++)
+                <div class="px-6 py-7">
+                    <h3 class="w-full block mb-16 text-darkGold">
+                        <span class="float-left text-5xl font-vecna">{{ $i }}</span>
+                        <span class="float-right text-right">
+                            <span class="text-2xl block text-right font-vecna">{{ $months[$i-1]['month'] }}</span>
+                            <span class="text-sm text-right"><em>{{ $months[$i-1]['moniker'] }}</em></span>
+                        </span>
+                    </h3>
+                    <div class="grid grid-cols-10">
+                        @for ($ii = 1; $ii <= 30; $ii++)
+                            <div>{{ $ii }}</div>
+                        @endfor
+                    </div>
                 </div>
-            </div>
-        @endfor
+            @endfor
+        </div>
     </section>
 </div>
 
