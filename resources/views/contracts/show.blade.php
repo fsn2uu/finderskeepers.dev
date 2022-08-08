@@ -34,7 +34,7 @@
     @foreach ($contract->comments as $comment)
     <div class="grid grid-cols-1 gap-4 mb-4">
         <p class="text-xl text-darkGold font-vecna">{{ \Carbon\Carbon::parse($comment->created_at)->format('D, M d, Y') }}</p>
-        <p class="">{{ $comment->body }}</p>
+        <p class="">{!! $comment->body !!}</p>
         </div>
     @endforeach
 </section>
