@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contract;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class ContractController extends Controller
@@ -38,9 +39,15 @@ class ContractController extends Controller
      */
     public function store(Request $request)
     {
-        $contract = Contract::create($request->except(['_token']));
+        $contract = Contract::create($request->except(['_token', 'comment']));
 
-        return redirect()->route('contracts.index');
+        if($request->has('comment'))
+        {
+            $comment = new Comment(['body' => $request->comment]);
+            $contract->comments()->save($comment);
+        }
+
+        return redirect()->route('contracts.show', $contract);
     }
 
     /**
@@ -76,7 +83,15 @@ class ContractController extends Controller
      */
     public function update(Request $request, Contract $contract)
     {
-        //
+        $contract->update($request->except(['_token', 'comment']));
+
+        if($request->has('comment'))
+        {
+            $comment = new Comment(['body' => $request->comment]);
+            $contract->comments()->save($comment);
+        }
+
+        return redirect()->route('contracts.show', $contract);
     }
 
     /**
@@ -87,6 +102,8 @@ class ContractController extends Controller
      */
     public function destroy(Contract $contract)
     {
-        //
+        $contract->delete();
+
+        return redirect()->route('contracts.index');
     }
 }

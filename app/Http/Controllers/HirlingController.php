@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hirling;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class HirlingController extends Controller
@@ -38,7 +39,13 @@ class HirlingController extends Controller
      */
     public function store(Request $request)
     {
-        $hirling = Hirling::create($request->except(['_token']));
+        $hirling = Hirling::create($request->except(['_token', 'comment']));
+
+        if($request->has('comment'))
+        {
+            $comment = new Comment(['body' => $request->comment]);
+            $hirling->comments()->save($comment);
+        }
 
         return redirect()->route('hirlings.index');
     }
@@ -76,9 +83,15 @@ class HirlingController extends Controller
      */
     public function update(Request $request, Hirling $hirling)
     {
-        $hirling->update($request->except(['_token']));
+        $hirling->update($request->except(['_token', 'comment']));
 
-        return redirect()->route('hirlings.index');
+        if($request->has('comment'))
+        {
+            $comment = new Comment(['body' => $request->comment]);
+            $hirling->comments()->save($comment);
+        }
+
+        return redirect()->route('hirlings.show', $hirling);
     }
 
     /**
