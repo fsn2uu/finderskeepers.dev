@@ -9,7 +9,7 @@
     </h2>
     <p class="mb-2 text-xl text-darkGold">Description</p>
     <div class="mb-4">
-        {{ nl2br($contract->description) }}
+        {!! nl2br($contract->description) !!}
     </div>
     <p class="mb-2 text-xl text-darkGold">Money</p>
     <div class="grid grid-cols-6 gap-2 mb-4">
