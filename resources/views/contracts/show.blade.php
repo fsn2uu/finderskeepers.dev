@@ -7,11 +7,11 @@
         <span class="font-vecna">{{ $contract->contractor }} ({{ $contract->status }})</span>
         <a href="{{ route('contracts.edit', $contract) }}" class="float-right text-lg py-2 px-4 bg-gold hover:bg-darkGold text-white">Edit</a>
     </h2>
-    <p class="mb-2 text-xl text-darkGold">Description</p>
+    <p class="mb-2 text-xl text-darkGold font-vecna">Description</p>
     <div class="mb-4">
         {!! nl2br($contract->description) !!}
     </div>
-    <p class="mb-2 text-xl text-darkGold">Money</p>
+    <p class="mb-2 text-xl text-darkGold font-vecna">Money</p>
     <div class="grid grid-cols-6 gap-2 mb-4">
         <div>{{ $contract->platinum }}pp</div>
         <div>{{ $contract->electrum }}ep</div>
@@ -19,7 +19,7 @@
         <div>{{ $contract->silver }}sp</div>
         <div>{{ $contract->copper }}cp</div>
     </div>
-    <p class="mb-2 text-xl text-darkGold">Other Loot</p>
+    <p class="mb-2 text-xl text-darkGold font-vecna">Other Loot</p>
     <p class="mb-4">{{ $contract->loot ?: 'None' }}</p>
     <p class="mb-2 text-xl text-darkGold font-vecna">Comments</p>
     <form action="{{ route('contracts.update', $contract) }}" method="post" class="mb-6">

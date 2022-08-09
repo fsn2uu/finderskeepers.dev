@@ -4,7 +4,7 @@
         <div class="p-2">
             <a href="{{ route('dashboard') }}">
                 <div class="grid grid-cols-2 divide-x text-darkGold">
-                    <div class="text-5xl">
+                    <div class="text-5xl font-vecna">
                         FK
                     </div>
                     <div class="">
