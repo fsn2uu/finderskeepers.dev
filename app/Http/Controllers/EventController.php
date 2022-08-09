@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -38,9 +39,15 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $event = Event::create($request->except(['_token']));
+        $event = Event::create($request->except(['_token', 'comment']));
 
-        return redirect()->route('events.index');
+        if($request->has('comment'))
+        {
+            $comment = new Comment(['body' => $request->comment]);
+            $event->comments()->save($comment);
+        }
+
+        return redirect()->route('events.show', $event);
     }
 
     /**
@@ -76,9 +83,15 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        $event->update($request->except(['_token']));
+        $event->update($request->except(['_token', 'comment']));
 
-        return redirect()->route('events.index');
+        if($request->has('comment'))
+        {
+            $comment = new Comment(['body' => $request->comment]);
+            $event->comments()->save($comment);
+        }
+
+        return redirect()->route('events.show', $event);
     }
 
     /**

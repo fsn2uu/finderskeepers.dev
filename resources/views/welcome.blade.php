@@ -66,7 +66,15 @@
                     </h3>
                     <div class="grid grid-cols-10">
                         @for ($ii = 1; $ii <= 30; $ii++)
-                            <div>{{ $ii }}</div>
+                            <div>
+                                @if (App\Models\Event::where('month', $months[$i-1]['month'])->where('day', $ii)->count() > 0)
+                                    <a href="{{ route('events.show', App\Models\Event::where('month', $months[$i-1]['month'])->where('day', $ii)->first()) }}" class="text-link underline">
+                                @endif
+                                {{ $ii }}
+                                @if (App\Models\Event::where('month', $months[$i-1]['month'])->where('day', $ii)->count() > 0)
+                                    </a>
+                                @endif
+                            </div>
                         @endfor
                     </div>
                 </div>

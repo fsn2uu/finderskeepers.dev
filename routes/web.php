@@ -17,7 +17,9 @@ use App\Http\Controllers\HirlingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $events = App\Models\Event::all();
+    return view('welcome')
+        ->withEvents($events);
 })->name('dashboard');
 
 Route::resource('contracts', ContractController::class);
