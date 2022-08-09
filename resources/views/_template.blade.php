@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Finders Keepers</title>
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}?v=1.0.3">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}?v=1.0.4">
     </head>
     <body>
         @include('_nav')
