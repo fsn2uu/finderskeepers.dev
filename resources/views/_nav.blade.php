@@ -18,6 +18,7 @@
             <a href="{{ route('contracts.index') }}" class="nav">Contracts</a>
             <a href="{{ route('events.index') }}" class="nav">Events</a>
             <a href="{{ route('hirlings.index') }}" class="nav">Hirlings</a>
+            <a href="{{ route('quests.index') }}" class="nav">Quests</a>
             
         </div>
         <button id="menu-btn" class="block z-50 hamburger md:hidden focus:outline-none">
@@ -33,6 +34,7 @@
             <a href="{{ route('contracts.index') }}" class="nav">Contracts</a>
             <a href="{{ route('events.index') }}" class="nav">Events</a>
             <a href="{{ route('hirlings.index') }}" class="nav">Hirlings</a>
+            <a href="{{ route('quests.index') }}" class="nav">Quests</a>
         </div>
     </div>
 </nav>
