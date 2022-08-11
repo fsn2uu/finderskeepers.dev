@@ -36,6 +36,21 @@
             <a href="{{ route('hirlings.show', $hirling) }}" class="block text-link underline">{{ $hirling->name }} - {{ $hirling->job }}</a>
         @endforeach
     </section>
+    <section id="quests" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 col-span-2">
+        <h2 class="text-3xl mb-6 text-darkGold font-vecna">Quests</h2>
+        @php
+            $i = 1;
+        @endphp
+        @foreach (App\Models\Quest::limit(5)->get() as $quest)
+            <a href="{{ route('quests.show', $quest) }}" class="block text-link underline">{{ $quest->title }} ({{ $quest->platinum ?: '0' }}PP, {{ $quest->electrum ?: '0' }}EP, {{ $quest->gold ?: '0' }}GP, {{ $quest->silver ?: '0' }}SP, {{ $quest->copper ?: '0' }}CP, Loot: {{ $quest->loot ?: '*sigh*' }})</a>
+            @if (App\Models\Quest::limit(5)->count() > 1 && $i < App\Models\Quest::limit(5)->count())
+                <hr class="my-4">
+            @endif
+            @php
+                $i++;
+            @endphp
+        @endforeach
+    </section>
     <section id="calendar" class="col-span-2 mb-16 rounded-xl bg-white bg-opacity-70">
         <h2 class="text-3xl text-darkGold font-vecna mb-4 text-center mt-4">Calendar of Harptos</h2>
         <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8">
