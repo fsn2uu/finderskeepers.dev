@@ -4,7 +4,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 w-[65%] mx-auto gap-6">
     <section id="contracts" class="rounded-xl col-span-2 md:col-span-1 bg-white bg-opacity-70 px-6 py-7">
-        <h2 class="text-3xl mb-6 text-darkGold font-vecna">Contracts</h2>
+        <h2 class="text-4xl mb-6 text-darkGold font-vecna">Contracts</h2>
         @foreach (App\Models\Contract::limit(5)->get() as $contract)
             <a href="{{ route('contracts.show', $contract) }}" class="block text-link underline">{{ $contract->contractor }} ({{$contract->status}}) - {{$contract->platinum}}pp | {{$contract->electrum}}ep | {{$contract->gold}}gp | {{$contract->silver}}sp | {{$contract->copper}}cp</a>
         @endforeach
@@ -31,13 +31,13 @@
         </div>
     </section>
     <section id="hirlings" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 col-span-2 md:col-span-1">
-        <h2 class="text-3xl mb-6 text-darkGold font-vecna">Hirlings</h2>
+        <h2 class="text-4xl mb-6 text-darkGold font-vecna">Hirlings</h2>
         @foreach (App\Models\Hirling::limit(5)->get() as $hirling)
             <a href="{{ route('hirlings.show', $hirling) }}" class="block text-link underline">{{ $hirling->name }} - {{ $hirling->job }}</a>
         @endforeach
     </section>
     <section id="quests" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 col-span-2">
-        <h2 class="text-3xl mb-6 text-darkGold font-vecna">Quests</h2>
+        <h2 class="text-4xl mb-6 text-darkGold font-vecna">Quests</h2>
         @php
             $i = 1;
         @endphp
@@ -52,7 +52,7 @@
         @endforeach
     </section>
     <section id="calendar" class="col-span-2 mb-16 rounded-xl bg-white bg-opacity-70">
-        <h2 class="text-3xl text-darkGold font-vecna mb-4 text-center mt-4">Calendar of Harptos</h2>
+        <h2 class="text-4xl text-darkGold font-vecna mb-4 text-center mt-4">Calendar of Harptos</h2>
         <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8">
             @php
                 $months = [

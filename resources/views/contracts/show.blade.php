@@ -3,7 +3,7 @@
 @section('content')
     
 <section id="form" class="rounded-xl bg-white bg-opacity-70 px-6 py-7 w-[65%] mx-auto">
-    <h2 class="text-3xl mb-6 text-darkGold">
+    <h2 class="text-5xl mb-6 text-darkGold">
         <span class="font-vecna">{{ $contract->contractor }} ({{ $contract->status }})</span>
         <a href="{{ route('contracts.edit', $contract) }}" class="float-right text-lg py-2 px-4 bg-gold hover:bg-darkGold text-white">Edit</a>
     </h2>
